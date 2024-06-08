@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"go-test-api/repositories"
+	"github.com/cpressland/e3-go-test-api/repositories"
 
 	"github.com/gin-gonic/gin"
 )

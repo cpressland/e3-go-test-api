@@ -1,8 +1,8 @@
 package main
 
 import (
-	"go-test-api/controllers"
-	"go-test-api/repositories"
+	"github.com/cpressland/e3-go-test-api/controllers"
+	"github.com/cpressland/e3-go-test-api/repositories"
 
 	"github.com/gin-gonic/gin"
 

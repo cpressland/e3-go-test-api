@@ -1,4 +1,4 @@
-module go-test-api
+module github.com/cpressland/e3-go-test-api
 
 go 1.22.3
 

@@ -1,9 +1,10 @@
 package controllers
 
 import (
-	"go-test-api/contracts"
 	"net/http"
 	"strconv"
+
+	"github.com/cpressland/e3-go-test-api/contracts"
 
 	"github.com/gin-gonic/gin"
 )

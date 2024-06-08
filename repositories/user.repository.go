@@ -1,6 +1,6 @@
 package repositories
 
-import "go-test-api/models"
+import "github.com/cpressland/e3-go-test-api/models"
 
 type UserRepository interface {
 	Create(user models.User) error
