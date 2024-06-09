@@ -1,0 +1,39 @@
+name: test
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+      - uses: JarvusInnovations/background-action@v1
+        with:
+          run: |
+            go build -o api
+            ./api
+          wait-on: |
+            http-get://localhost:8080/users
+      # Python Section
+      - uses: actions/checkout@v4
+        with:
+          repository: 'cpressland/e3-pytest'
+          path: pytest
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install poetry
+      - run: poetry install
+        working-directory: pytest
+      - run: poetry run pytest
+        working-directory: pytest
+        env:
+          API_URL: http://localhost:8080
